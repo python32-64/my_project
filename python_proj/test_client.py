@@ -26,7 +26,7 @@ def screen():
     status = True
     while (status):
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.connect(('192.168.1.31', 8002))
+        s.connect(('ваш ip', 8002))
 
         f()
 
@@ -45,7 +45,7 @@ def screen():
 def command_keyboard():
     import keyboard, socket
     cli = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    cli.connect(('127.0.0.1', 8003))
+    cli.connect(('ваш ip', 8003))
     try:
         while True:
             cli.send(bytes(keyboard.read_key(), encoding='utf-8'))
@@ -56,7 +56,7 @@ def command_keyboard():
 def mouse_():
     import mouse, socket
     cli = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    cli.connect(('127.0.0.1', 8004))
+    cli.connect(('ваш ip', 8004))
     try:
         while True:
             cli.send(bytes(f'{mouse.get_position()[0]} {mouse.get_position()[1]}', encoding='utf-8'))
